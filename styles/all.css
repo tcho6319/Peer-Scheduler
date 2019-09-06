@@ -1,0 +1,248 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+h1{
+    border-bottom-style: solid;
+    border-bottom-color:rgb(171, 112, 226);
+    color: rgb(171, 112, 226);
+    padding: 2%;
+    letter-spacing: 5px;
+}
+
+
+h1 a{
+    color: rgb(171, 112, 226);
+    
+}
+
+
+
+/* Post on index.php styline */
+.post{
+    border-style: solid;
+    border-color: rgb(171, 112, 226);
+    color: black;
+    text-decoration-line: none;
+    margin-bottom: 1%;
+
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.post h3{
+    background-color: rgb(171, 112, 226);
+    margin-top: 0%;
+    color: white;
+    padding: 5px;
+}
+
+.post p{
+    padding: 5px;
+}
+
+
+.post_id{
+    border-style: solid;
+    border-color: rgb(171, 112, 226);
+    border-width: thin;
+    margin-right: 1%;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    padding: 1px;
+}
+
+
+/*Layout of index.php*/
+#home_div{
+    display:flex;
+    flex-direction: row;
+}
+
+#options_div{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 10%;
+    margin-right: 2%;
+
+
+}
+
+#posts_div{
+    width: 60%;
+    border-left-style: solid;
+    border-left-color: rgb(213, 180, 243);
+    border-left-width: thin;
+    padding-left: 2%;
+}
+
+/*buttons*/
+button{
+    background-color: rgb(145, 83, 204);
+    color: white;
+}
+
+.home_button{
+    padding: 2%;
+    font-size: 16px;
+    margin: 5%;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+#show_post_button{
+    background-color: rgb(171, 112, 226);
+}
+
+#show_upload_button{
+    background-color: rgb(184, 127, 238);
+}
+
+#hide_reg_button, #hide_post_button, #hide_upload_button{
+    background-color: white;
+    color: rgb(145, 83, 204);
+    border-color: rgb(145, 83, 204);
+}
+
+
+
+/*Search boxes and Forms*/
+form{
+    font-size: 17px;
+}
+
+fieldset{
+    border-color: rgb(145, 83, 204);
+    border-radius: 10px;
+}
+
+fieldset legend{
+    color: rgb(145, 83, 204);
+
+}
+
+#changeable_searchContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+
+#category_searchDiv{
+    margin-right: 1%;
+}
+
+
+/*Upload Form*/
+
+#upload_form li{
+    list-style: none;
+    margin-top: 2%;
+}
+
+#confirm_message{
+    border-style: outset;
+    border-width: thin;
+    border-color:  rgb(145, 83, 204);
+
+}
+
+/* schedView */
+#entire_schedView{
+    display:flex;
+    flex-direction: row;
+}
+
+#search_results_schedView{
+    width: 30%;
+    height: 85vh;
+    position: relative;
+}
+
+#search_results_schedView_wrapper{
+overflow-y: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#current_schedView{
+
+    width: 70%;
+    margin-left: 2%;
+    border-style: outset;
+    padding: 2%;
+    border-color: rgb(213, 180, 243);
+    border-width: thin;
+    border-radius: 25px;
+
+
+
+    
+}
+
+
+
+#current_img{
+    text-align: center;
+}
+
+#post_img{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#post_id_schedView{
+    color: rgb(171, 112, 226);
+}
+
+
+
+
+
+
+
+/* Comments */
+#comment_form{
+    margin-bottom: 2%;
+    
+}
+
+hr{
+    border-width: 2px;
+    border-color: rgb(213, 180, 243);
+}
+
+.comment{
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 10px;
+    border-color: rgba(180, 164, 194, 0.603);
+}
+
+
+/*Footer*/
+footer{
+    background-color:  rgb(145, 83, 204);
+    width: 100%;
+    margin-top: 30%;
+    padding: 1%;
+}
+
+footer a{
+    color: white;
+}
