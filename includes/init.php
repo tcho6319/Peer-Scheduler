@@ -296,7 +296,7 @@ function print_options($options){
 }
 
 //Function to insert image
-function insert_img($id, $db){
+function insert_img($id, $db, $isSmall = False){
      //sql query to get img details
      $sql = "SELECT * FROM images INNER JOIN posts ON images.id = posts.image_id WHERE posts.id= :post_id;";
      $params = array(':post_id' => $id);
@@ -312,7 +312,14 @@ function insert_img($id, $db){
 
      $img_path = "uploads/images/".$img_id.".".$img_ext;
 
-     echo "<img id='post_img' src='" . $img_path . "' alt='" . $img_citation . "'>";
+     if($isSmall){ //thumbnail ver of img
+      echo "<img class='small_post_img' src='" . $img_path . "' alt='" . $img_citation . "'>";
+     }
+     else {
+       echo "<img class='post_img' src='" . $img_path . "' alt='" . $img_citation . "'>";
+      }
+
+
 }
 
 function print_track_options($tracks){
@@ -365,12 +372,12 @@ function load_post($post_id, $db){
   $a_description = $a_description[0]["a_description"];
   //var_dump($a_description["a_description"]);
 
-  print_post($post_id, $post_majors, $post_minors, $tracks, $term, $year, $a_description);
+  print_post($post_id, $post_majors, $post_minors, $tracks, $term, $year, $a_description, $db);
 
 
 }
   
-function print_post($post_id, $majors, $minors, $tracks, $term, $year, $a_description){
+function print_post($post_id, $majors, $minors, $tracks, $term, $year, $a_description, $db){
   //Prints div and details for one post
 
   //getting majors printable
@@ -464,8 +471,10 @@ else{
       $a_description = "";
   }
 
-  echo "<a class='post_a' href='schedView.php?" . http_build_query(array('id' => $post_id)) . "'><div class='post'><h3><span class='post_id'>" . htmlspecialchars($print_post_id) . "</span>" . $heading . "</h3><p>" . htmlspecialchars($a_description) . "</p></div></a>";
-
+  // echo "<a class='post_a' href='schedView.php?" . http_build_query(array('id' => $post_id)) . "'><div class='post'><h3><span class='post_id'>" . htmlspecialchars($print_post_id) . "</span>" . $heading . "</h3><p>" . htmlspecialchars($a_description) . "</p></div></a>";
+  echo "<a href='schedView.php?" . http_build_query(array('id' => $post_id)) . "'><div class='entire_post'><div class='post_img_div'>"; 
+  insert_img($post_id, $db, True);
+  echo "</div><div class='post_text_div'><div class='post'><h3><span class='post_id'>" . htmlspecialchars($print_post_id) . "</span>" . $heading . "</h3><p>" . htmlspecialchars($a_description) . "</p></div></div></div></a>";
 }
 
 

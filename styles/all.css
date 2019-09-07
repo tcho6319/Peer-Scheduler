@@ -3,24 +3,25 @@ body{
 }
 
 
-h1{
+header{
     border-bottom-style: solid;
     border-bottom-color:rgb(171, 112, 226);
     color: rgb(171, 112, 226);
-    padding: 2%;
-    letter-spacing: 5px;
+    margin-bottom: 2%;
+
 }
 
 
-h1 a{
-    color: rgb(171, 112, 226);
-    
+#logo img{
+    width: 40%;
+    margin-top: 0px;
 }
+
 
 
 
 /* Post on index.php styline */
-.post{
+.entire_post{
     border-style: solid;
     border-color: rgb(171, 112, 226);
     color: black;
@@ -36,6 +37,27 @@ a:hover{
 a{
     text-decoration: none;
 }
+
+
+.entire_post{
+    display: flex;
+    flex-direction: row;
+}
+
+.post_img_div{
+    width: 30%;
+}
+
+.small_post_img{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.post_text_div{
+    width: 70%;
+}
+
 
 
 .post h3{
@@ -74,6 +96,7 @@ a{
     width: 40%;
     margin-top: 10%;
     margin-right: 2%;
+
 
 
 }
@@ -198,7 +221,7 @@ overflow-y: auto;
     text-align: center;
 }
 
-#post_img{
+.post_img{
     width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -238,7 +261,7 @@ hr{
 /*Footer*/
 footer{
     background-color:  rgb(145, 83, 204);
-    width: 100%;
+    /* width: 100%; */
     margin-top: 30%;
     padding: 1%;
 }

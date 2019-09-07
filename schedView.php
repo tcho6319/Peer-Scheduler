@@ -7,20 +7,6 @@ $post_list = $_SESSION["post_list"];
 
 $id = $_GET['id'];
 
-//function to search $post_list for index of current id Returns False if not found
-     function search_post_list($id, $post_list){
-        $post_ind_post_list = 0; //ind of post in post_list
-        foreach ($post_list as $post){
-          if ($post["id"] == $id){
-            return $post_ind_post_list;
-          }
-          $post_ind_post_list = $post_ind_post_list + 1;
-        }
-        return FALSE;
-      }
-
-
-
 
 
 if (isset($_GET['id'])){
@@ -164,37 +150,6 @@ if (isset($_GET['id'])){
          $a_description_exists = False;
      }
   
-  //slidshow buttons
-  $post_ind_post_list = search_post_list($id, $post_list);   //index of current post in post_list
-  if ($post_ind_post_list == (count($post_list) - 1)){ //current post is last post in post_list
-    $next_post_ind_post_list = 0;
-    $back_post_ind_post_list = $post_ind_post_list - 1;
-    // echo "In correct if block";
-  }
-  elseif ($post_ind_post_list == 0){ //current post is first post in post_list
-    $back_post_ind_post_list = count($post_list) - 1;
-    $next_post_ind_post_list = $post_ind_post_list + 1;
-    // echo "In single_img_ind_image_list == 0 block";
-  }
-  else { //in middle of slideshow
-    $back_post_ind_post_list = $post_ind_post_list - 1;
-    $next_post_ind_post_list = $post_ind_post_list + 1;
-    // echo "In else block";
-  }
-  $back_post = $post_list[$back_post_ind_post_list];
-  $next_post = $post_list[$next_post_ind_post_list];
-
-  $back_post_id = $back_post["id"];
-  $next_post_id = $next_post["id"];
-
-//   var_dump($back_post_id);
-//   var_dump($next_post_id);
-
-
-
-
-
-
   //-------------COMMENTS------------
 
   
