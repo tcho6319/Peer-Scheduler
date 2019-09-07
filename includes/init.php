@@ -471,6 +471,11 @@ else{
       $a_description = "";
   }
 
+  //truncate a_description in post preview
+  if(strlen($a_description) > 180){
+    $a_description .= "...";
+  }
+
   // echo "<a class='post_a' href='schedView.php?" . http_build_query(array('id' => $post_id)) . "'><div class='post'><h3><span class='post_id'>" . htmlspecialchars($print_post_id) . "</span>" . $heading . "</h3><p>" . htmlspecialchars($a_description) . "</p></div></a>";
   echo "<a href='schedView.php?" . http_build_query(array('id' => $post_id)) . "'><div class='entire_post'><div class='post_img_div'>"; 
   insert_img($post_id, $db, True);
