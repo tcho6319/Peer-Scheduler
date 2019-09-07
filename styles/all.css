@@ -42,6 +42,8 @@ a{
 .entire_post{
     display: flex;
     flex-direction: row;
+    height: 250px;
+    margin-bottom: 2%;
 }
 
 .post_img_div{
